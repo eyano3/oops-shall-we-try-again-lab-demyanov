@@ -1,9 +1,25 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Oops {
-  public int getInput() {
-    // Implement your function here. You can delete these comments and the "return 0" below.
-    // You will need to fill in the arguments to `getInput` as per the acceptance criteria.
-    return 0;
+  Scanner scanner = new Scanner(System.in);
+
+  public int getInput(int lowerBound, int upperBound, String prompt, String errorMessage) {
+    int value = promptAndRead(prompt);
+
+    while (!(value >= lowerBound && value <= upperBound)) {
+      System.out.println();
+      System.out.println(errorMessage);
+      value = promptAndRead(prompt);
+    }
+
+    return value;
   }
+
+  public int promptAndRead(String prompt) {
+    System.out.println(prompt);
+    return scanner.nextInt();
+  }
+
 }
