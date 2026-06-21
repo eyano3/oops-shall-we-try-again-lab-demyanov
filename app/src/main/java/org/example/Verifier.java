@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Scanner;
 
-public class Oops {
+public class Verifier {
   Scanner scanner = new Scanner(System.in);
 
   public int getInput(int lowerBound, int upperBound, String prompt, String errorMessage) {
